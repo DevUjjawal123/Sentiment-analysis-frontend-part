@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Movie Sentiment Analyzer - Home</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Movie Sentiment Analyzer</h1>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    
+    <section id="home" class="section hero" style="background-image: url('images/movie-bg.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <h2>Analyze Movie Sentiments Instantly!</h2>
+            <p>Enter a movie review to find out its sentiment analysis and understand how audiences feel about your favorite films.</p>
+            <div class="input-area">
+                <textarea id="reviewInput" rows="6" placeholder="Enter your movie review..."></textarea>
+                <button id="analyzeBtn" class="btn primary">Analyze Sentiment</button>
+                <div id="result">
+                    <!-- The result will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <h3>Real-Time Analysis</h3>
+                    <p>Get immediate feedback on the sentiment of any movie review. Our powerful algorithms analyze text in real time, providing instant results.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Comprehensive Insights</h3>
+                    <p>Our tool categorizes sentiment into positive, negative, or neutral, offering a detailed understanding of how a movie is perceived.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Easy to Use</h3>
+                    <p>Simply paste your review into the text area and click 'Analyze Sentiment' to get started. Our user-friendly interface makes it accessible for everyone.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Data-Driven Decisions</h3>
+                    <p>Leverage our sentiment analysis to make informed decisions about movie selections, marketing strategies, and more based on audience feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="section" style="background: #f9f9f9;">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="how-it-works-content">
+                <div class="how-it-works-step">
+                    <h3>1. Input Your Review</h3>
+                    <p>Type or paste your movie review into the provided text area on our home page.</p>
+                </div>
+                <div class="how-it-works-step">
+                    <h3>2. Analyze Sentiment</h3>
+                    <p>Click the 'Analyze Sentiment' button to process the review. Our advanced NLP algorithms will evaluate the text.</p>
+                </div>
+                <div class="how-it-works-step">
+                    <h3>3. View Results</h3>
+                    <p>Receive immediate feedback on the sentiment of your review, including a summary of how others perceive the film.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <h1>Sentiment Analysis</h1>
+                <p>Uncovering insights from emotions in text.</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/YourProfile" target="_blank" title="GitHub"><img src="github.png" alt="GitHub" class="social-icon"></a>
+                <a href="https://twitter.com/YourProfile" target="_blank" title="Twitter"><img src="twitter.png" alt="Twitter" class="social-icon"></a>
+                <a href="https://linkedin.com/in/YourProfile" target="_blank" title="LinkedIn"><img src="linkdln.png" alt="LinkedIn" class="social-icon"></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Sentiment Analysis. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+        
+
+    <script src="scripts.js"></script>
+</body>
+</html>

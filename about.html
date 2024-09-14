@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Movie Sentiment Analyzer - About</title>
+    <style>
+        /* Add some modern and professional styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin: 0 20px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    position: relative;
+    font-weight: 500;
+}
+
+.menu a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #007bff;
+    width: 0;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background: #fff;
+    height: 4px;
+    width: 30px;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+
+        /* About Section */
+        .about {
+            padding: 60px 20px;
+            background-color: #ecf0f1;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1 1 55%;
+            padding-right: 20px;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .about-image {
+            flex: 1 1 40%;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-logo h1 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            font-size: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .footer-links ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul li a:hover {
+            color: #f39c12;
+            transition: 0.3s;
+        }
+
+        .social-links a img {
+            width: 30px;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a img:hover {
+            transform: scale(1.1);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text {
+                padding-right: 0;
+            }
+
+            .about-image {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Movie Sentiment Analyzer</h1>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Movie Sentiment Analyzer</h2>
+                    <p>Welcome to the Movie Sentiment Analyzer, a cutting-edge platform designed to decode the emotional essence behind movie reviews. Our advanced machine learning models analyze vast amounts of review data to determine whether the sentiment expressed is positive, negative, or neutral.</p>
+                    <p>Why is sentiment analysis important? In the world of entertainment, understanding audience reactions can significantly influence movie-making decisions, marketing strategies, and even viewer recommendations. By assessing the general mood of the reviews, our tool provides insights that help filmmakers, critics, and audiences alike to gauge the success and reception of films.</p>
+                    <p>Our tool employs state-of-the-art Natural Language Processing (NLP) techniques to interpret and categorize sentiments from user reviews. With accurate sentiment classification, you can make more informed decisions about what movies to watch or recommend, and understand trends in the entertainment industry.</p>
+                    <p>Explore our platform to uncover the feelings and opinions of moviegoers around the globe. Whether you're a film enthusiast or industry professional, our insights will help you stay ahead in the ever-evolving world of cinema and entertainment.</p>
+                </div>
+                <div class="about-image">
+                    <img src="pic1.png" alt="Movie Sentiment Analysis">
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <h1>Sentiment Analysis</h1>
+                <p>Uncovering insights from emotions in text.</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/YourProfile" target="_blank" title="GitHub"><img src="github.png" alt="GitHub" class="social-icon"></a>
+                <a href="https://twitter.com/YourProfile" target="_blank" title="Twitter"><img src="twitter.png" alt="Twitter" class="social-icon"></a>
+                <a href="https://linkedin.com/in/YourProfile" target="_blank" title="LinkedIn"><img src="linkdln.png" alt="LinkedIn" class="social-icon"></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Sentiment Analysis. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

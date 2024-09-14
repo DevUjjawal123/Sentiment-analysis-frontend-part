@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Sentiment Analyzer - Reviews</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin: 0 20px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    position: relative;
+    font-weight: 500;
+}
+
+.menu a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #007bff;
+    width: 0;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    background: #fff;
+    height: 4px;
+    width: 30px;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+
+        /* Reviews Section */
+        .reviews {
+            padding: 60px 20px;
+            background-color: #ecf0f1;
+        }
+
+        .reviews h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #7f8c8d;
+        }
+
+        .reviews-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-item h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .review-item p {
+            margin: 5px 0;
+            line-height: 1.6;
+        }
+
+        .review-item strong {
+            color: #2c3e50;
+        }
+
+        /* Footer */
+        footer {
+    background: #2c3e50;
+    color: #fff;
+    padding: 40px 20px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-logo h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #007bff;
+}
+
+.footer-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.footer-links li {
+    margin: 0 15px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.footer-links a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #007bff;
+    width: 0;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.social-links a {
+    margin: 0 10px;
+}
+
+.social-links img {
+    width: 28px;
+    height: 28px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active + .menu {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #333;
+        width: 200px;
+        padding: 10px 0;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+
+    .menu li {
+        margin: 10px 0;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Movie Sentiment Analyzer</h1>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="reviews.html" class="active">Reviews</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="reviews" class="section reviews">
+        <div class="container">
+            <h2>Recent Reviews</h2>
+            <p class="intro">Explore the latest feedback on movies and entertainment. Stay updated with the emotional responses from viewers.</p>
+            <div class="reviews-list">
+                <div class="review-item">
+                    <h3>Inception - A Mind-Bending Experience</h3>
+                    <p><strong>Reviewer:</strong> John Doe</p>
+                    <p><strong>Rating:</strong> ★★★★☆</p>
+                    <p>"Inception is a brilliantly crafted film that takes viewers on a thrilling ride through the labyrinth of dreams. The concept is intriguing, and the execution is flawless. A must-watch for fans of mind-bending narratives."</p>
+                </div>
+                <div class="review-item">
+                    <h3>Spider-Man: No Way Home - A Heroic Return</h3>
+                    <p><strong>Reviewer:</strong> Jane Smith</p>
+                    <p><strong>Rating:</strong> ★★★★★</p>
+                    <p>"Spider-Man: No Way Home is an exhilarating rollercoaster of action and emotion. With its strong performances and stunning visual effects, it delivers a satisfying and nostalgic experience for fans of the web-slinger."</p>
+                </div>
+                <div class="review-item">
+                    <h3>The Matrix Resurrections - A New Dimension</h3>
+                    <p><strong>Reviewer:</strong> Alice Johnson</p>
+                    <p><strong>Rating:</strong> ★★★☆☆</p>
+                    <p>"The Matrix Resurrections brings back the iconic franchise with a fresh perspective. While it pays homage to the original, it struggles to capture the same magic. Nonetheless, it's an intriguing addition to the Matrix universe."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">
+                <h1>Sentiment Analysis</h1>
+                <p>Uncovering insights from emotions in text.</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/YourProfile" target="_blank" title="GitHub"><img src="github.png" alt="GitHub" class="social-icon"></a>
+                <a href="https://twitter.com/YourProfile" target="_blank" title="Twitter"><img src="twitter.png" alt="Twitter" class="social-icon"></a>
+                <a href="https://linkedin.com/in/YourProfile" target="_blank" title="LinkedIn"><img src="linkdln.png" alt="LinkedIn" class="social-icon"></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Sentiment Analysis. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
